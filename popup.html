@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Transcript AI Assistant</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>YouTube Transcript AI</h1>
+            <p class="subtitle">文字起こしをAIアシスタントに送信</p>
+        </header>
+        
+        <div class="status-section">
+            <div id="status" class="status-message">YouTube動画を開いてください</div>
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <span>文字起こしを取得中...</span>
+            </div>
+        </div>
+        
+        <div class="transcript-section" id="transcriptSection">
+            <h3>文字起こし</h3>
+            <div id="transcript" class="transcript-text">文字起こしがここに表示されます</div>
+            <div class="transcript-actions">
+                <button id="copyBtn" class="btn btn-primary">📋 コピー</button>
+                <button id="refreshBtn" class="btn btn-secondary">🔄 更新</button>
+            </div>
+        </div>
+        
+        <div class="prompt-section">
+            <h3>カスタムプロンプト</h3>
+            <textarea id="customPrompt" class="prompt-input" placeholder="ここにAIに送るプロンプトを入力してください（文字起こしの前に追加されます）"></textarea>
+            <div class="prompt-actions">
+                <button id="savePromptBtn" class="btn btn-small">保存</button>
+                <button id="clearPromptBtn" class="btn btn-small">クリア</button>
+            </div>
+        </div>
+        
+        <div class="ai-buttons">
+            <h3>AIアシスタントに送信</h3>
+            <div class="button-grid">
+                <button id="chatgptBtn" class="btn btn-ai chatgpt">
+                    <span class="ai-icon">🤖</span>
+                    ChatGPT
+                </button>
+                <button id="claudeBtn" class="btn btn-ai claude">
+                    <span class="ai-icon">🤖</span>
+                    Claude
+                </button>
+                <button id="geminiBtn" class="btn btn-ai gemini">
+                    <span class="ai-icon">💎</span>
+                    Gemini
+                </button>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <small>YouTube動画ページで使用してください</small>
+        </div>
+    </div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>
